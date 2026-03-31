@@ -13,8 +13,20 @@ public class Dashboard extends javax.swing.JFrame {
 
     public Dashboard() {
         initComponents();
+        employeeTable.addMouseListener(new java.awt.event.MouseAdapter() {
+    public void mouseClicked(java.awt.event.MouseEvent evt) {
+        int row = employeeTable.getSelectedRow();
+        if (row >= 0) {
+            Object val = employeeTable.getValueAt(row, 0);
+            if (val != null) {
+                loadSelectedEmployee(val.toString());
+            }
+        }
     }
-
+});
+}
+    
+    private int selectedEmployeeId = -1;
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -55,6 +67,8 @@ public class Dashboard extends javax.swing.JFrame {
         fullNameTxt = new javax.swing.JTextField();
         jLabelDateHired = new javax.swing.JLabel();
         dateHiredDC = new com.toedter.calendar.JDateChooser();
+        msUpdateBtn = new javax.swing.JButton();
+        msDeleteBtn = new javax.swing.JButton();
         generatepayroll = new javax.swing.JPanel();
         navPanelGP = new javax.swing.JPanel();
         gpAdminDashBoard = new javax.swing.JButton();
@@ -80,7 +94,7 @@ public class Dashboard extends javax.swing.JFrame {
         navLbl = new javax.swing.JLabel();
         adLogout = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        studtable = new javax.swing.JTable();
+        adminTable = new javax.swing.JTable();
         titlePanel = new javax.swing.JPanel();
         titleLbl = new javax.swing.JLabel();
         overviewLbl = new javax.swing.JLabel();
@@ -472,6 +486,28 @@ public class Dashboard extends javax.swing.JFrame {
         jLabelDateHired.setForeground(new java.awt.Color(255, 102, 102));
         jLabelDateHired.setText("Date Hired:");
 
+        msUpdateBtn.setBackground(new java.awt.Color(255, 204, 204));
+        msUpdateBtn.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        msUpdateBtn.setForeground(new java.awt.Color(255, 102, 102));
+        msUpdateBtn.setText("Update");
+        msUpdateBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 102, 102), 4, true));
+        msUpdateBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                msUpdateBtnActionPerformed(evt);
+            }
+        });
+
+        msDeleteBtn.setBackground(new java.awt.Color(255, 204, 204));
+        msDeleteBtn.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        msDeleteBtn.setForeground(new java.awt.Color(255, 102, 102));
+        msDeleteBtn.setText("Delete");
+        msDeleteBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 102, 102), 4, true));
+        msDeleteBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                msDeleteBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout managestaffLayout = new javax.swing.GroupLayout(managestaff);
         managestaff.setLayout(managestaffLayout);
         managestaffLayout.setHorizontalGroup(
@@ -491,17 +527,23 @@ public class Dashboard extends javax.swing.JFrame {
                                     .addComponent(jLabelSalary)
                                     .addComponent(jLabelStatus)
                                     .addComponent(jLabelDateHired))
-                                .addGap(22, 22, 22)
-                                .addGroup(managestaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(positionCB, 0, 231, Short.MAX_VALUE)
-                                    .addComponent(fullNameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(salaryTxt)
-                                    .addComponent(statusCB, 0, 231, Short.MAX_VALUE)
-                                    .addComponent(dateHiredDC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(managestaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(managestaffLayout.createSequentialGroup()
+                                        .addGap(22, 22, 22)
+                                        .addGroup(managestaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(positionCB, 0, 231, Short.MAX_VALUE)
+                                            .addComponent(fullNameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(salaryTxt)
+                                            .addComponent(statusCB, 0, 231, Short.MAX_VALUE)))
+                                    .addGroup(managestaffLayout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(dateHiredDC, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(47, 47, 47)
                                 .addGroup(managestaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(msClrBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(msSaveBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)))
+                                    .addComponent(msSaveBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
+                                    .addComponent(msUpdateBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
+                                    .addComponent(msDeleteBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)))
                             .addComponent(jLabelManageEmployees)
                             .addComponent(jLabelEmployeesDirectory))
                         .addContainerGap(69, Short.MAX_VALUE))
@@ -515,37 +557,40 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGroup(managestaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(navPanelMS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(managestaffLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(jLabelManageEmployees)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(managestaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(managestaffLayout.createSequentialGroup()
-                                .addComponent(jLabelFullName)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(fullNameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(managestaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(positionCB, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelPosition)
-                            .addComponent(msSaveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(managestaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(managestaffLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(managestaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabelSalary)
-                                    .addComponent(salaryTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
+                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(managestaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabelStatus)
-                                    .addComponent(statusCB, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(statusCB, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(27, 27, 27))
                             .addGroup(managestaffLayout.createSequentialGroup()
-                                .addGap(33, 33, 33)
-                                .addComponent(msClrBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
+                                .addGap(12, 12, 12)
+                                .addComponent(jLabelManageEmployees)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(managestaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(managestaffLayout.createSequentialGroup()
+                                        .addComponent(jLabelFullName)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addComponent(fullNameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(managestaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(positionCB, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabelPosition)
+                                    .addComponent(msSaveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(managestaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(msUpdateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabelSalary)
+                                    .addComponent(salaryTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(21, 21, 21)
+                                .addComponent(msDeleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)))
                         .addGroup(managestaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(msClrBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabelDateHired)
                             .addComponent(dateHiredDC, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(27, 27, 27)
+                        .addGap(102, 102, 102)
                         .addComponent(jLabelEmployeesDirectory)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -858,22 +903,22 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(mngStaffBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(payrollBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 203, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(adLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(46, 46, 46))
         );
 
-        studtable.setBackground(new java.awt.Color(255, 153, 153));
-        studtable.setModel(new javax.swing.table.DefaultTableModel(
+        adminTable.setBackground(new java.awt.Color(255, 153, 153));
+        adminTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "StudentID", "First Name", "Last Name", "Program", "Year"
+                "EmployeeID", "Full Name", "Position", "Basic Salary", "Status", "Date Hired"
             }
         ));
-        studtable.setSelectionForeground(new java.awt.Color(255, 102, 102));
-        jScrollPane3.setViewportView(studtable);
+        adminTable.setSelectionForeground(new java.awt.Color(255, 102, 102));
+        jScrollPane3.setViewportView(adminTable);
 
         titlePanel.setBackground(new java.awt.Color(255, 204, 204));
         titlePanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 102, 102), 4, true));
@@ -930,13 +975,14 @@ public class Dashboard extends javax.swing.JFrame {
                         .addComponent(overviewLbl)
                         .addGap(41, 41, 41)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                        .addContainerGap(264, Short.MAX_VALUE))))
         );
 
         adminPanel.add(adminDashboard, "card2");
         getContentPane().add(adminDashboard, "adminDashboard");
 
         getContentPane().add(adminPanel, "card6");
+        getContentPane().add(adminPanel, "adminPanel");
 
         managerPanel.setLayout(new java.awt.CardLayout());
 
@@ -1039,6 +1085,9 @@ public class Dashboard extends javax.swing.JFrame {
         ));
         mdDashboardTable.setSelectionForeground(new java.awt.Color(255, 102, 102));
         jScrollPane6.setViewportView(mdDashboardTable);
+        if (mdDashboardTable.getColumnModel().getColumnCount() > 0) {
+            mdDashboardTable.getColumnModel().getColumn(4).setHeaderValue("Status");
+        }
 
         titlePanel1.setBackground(new java.awt.Color(255, 204, 204));
         titlePanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 102, 102), 4, true));
@@ -1562,6 +1611,7 @@ public class Dashboard extends javax.swing.JFrame {
         getContentPane().add(attendancelog, "attendancelog");
 
         getContentPane().add(managerPanel, "card4");
+        getContentPane().add(managerPanel, "managerPanel");
 
         employeePanel.setLayout(new java.awt.CardLayout());
 
@@ -1655,6 +1705,9 @@ public class Dashboard extends javax.swing.JFrame {
         ));
         payslipTable.setSelectionForeground(new java.awt.Color(255, 102, 102));
         jScrollPane9.setViewportView(payslipTable);
+        if (payslipTable.getColumnModel().getColumnCount() > 0) {
+            payslipTable.getColumnModel().getColumn(4).setHeaderValue("Status");
+        }
 
         titlePanel2.setBackground(new java.awt.Color(255, 204, 204));
         titlePanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 102, 102), 4, true));
@@ -1879,57 +1932,65 @@ public class Dashboard extends javax.swing.JFrame {
         getContentPane().add(requestOt, "requestOt");
 
         getContentPane().add(employeePanel, "card5");
+        getContentPane().add(employeePanel, "employeePanel");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
     private void msSaveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_msSaveBtnActionPerformed
+    String fullName = fullNameTxt.getText().trim();
+    String position = positionCB.getSelectedItem() != null ? positionCB.getSelectedItem().toString() : "";
+    String salary = salaryTxt.getText().trim();
+    String status = statusCB.getSelectedItem() != null ? statusCB.getSelectedItem().toString() : "";
+    java.util.Date dateHired = dateHiredDC.getDate();
 
-        String studentID = studentid.getSelectedItem().toString().split(" - ")[0];
-        String courseID = positionCB.getSelectedItem().toString().split(" - ")[0];
-        String selectedSemester = statusCB.getSelectedItem().toString();
-        String sy = salaryTxt.getText();
+    if (fullName.isEmpty() || position.isEmpty() || salary.isEmpty() || status.isEmpty() || dateHired == null) {
+        JOptionPane.showMessageDialog(this, "Please fill in all fields.");
+        return;
+    }
 
-        if (sy.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Please enter School Year");
-            return;
-        }
+    try {
+        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+        String url = "jdbc:sqlserver://localhost:1433;" +
+                "databaseName=EmployeePayroll;" +
+                "user=sa;password=12345;" +
+                "encrypt=true;trustServerCertificate=true;";
+        Connection con = DriverManager.getConnection(url);
 
-        try {
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+        String formattedDate = new java.text.SimpleDateFormat("yyyy-MM-dd").format(dateHired);
 
-            String serverName = "jdbc:sqlserver://localhost:1433;" +
-            "databaseName = TestDB;" +
-            "user = sa;" +
-            "password = 12345;"+
-            "encypt = true;"+
-            "trustServerCertificate = true;";
+        String sql = "INSERT INTO Employee (full_name, position, basic_salary, employment_status, date_hired) VALUES (?, ?, ?, ?, ?)";
+        PreparedStatement pst = con.prepareStatement(sql);
+        pst.setString(1, fullName);
+        pst.setString(2, position);
+        pst.setDouble(3, Double.parseDouble(salary));
+        pst.setString(4, status);
+        pst.setString(5, formattedDate);
+        pst.executeUpdate();
 
-            Connection con = DriverManager.getConnection(serverName);
+        JOptionPane.showMessageDialog(this, "Employee saved successfully!");
+        con.close();
+        msClrBtnActionPerformed(null);
+        loadEmployeeTable();
 
-            String sql = "INSERT INTO Enrollment (student_id, course_id, semester, year) VALUES (?, ?, ?, ?)";
-            PreparedStatement pst = con.prepareStatement(sql);
-            pst.setString(1, studentID);
-            pst.setString(2, courseID);
-            pst.setString(3, selectedSemester);
-            pst.setString(4, sy);
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Invalid salary. Please enter a valid number.");
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+    }
 
-            pst.executeUpdate();
-            JOptionPane.showMessageDialog(this, "Course Assigned Successfully!");
-            loadEnrollment();
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
-        }
 
     }//GEN-LAST:event_msSaveBtnActionPerformed
 
     private void msClrBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_msClrBtnActionPerformed
-        // TODO add your handling code here:
-        studentid.setSelectedIndex(-1);
+        fullNameTxt.setText("");
         positionCB.setSelectedIndex(-1);
-        statusCB.setSelectedIndex(-1);
         salaryTxt.setText("");
+        statusCB.setSelectedIndex(-1);
+        dateHiredDC.setDate(null);
+        selectedEmployeeId = -1;
+
     }//GEN-LAST:event_msClrBtnActionPerformed
 
     private void msGeneratePayrollActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_msGeneratePayrollActionPerformed
@@ -1939,9 +2000,10 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_msGeneratePayrollActionPerformed
 
     private void msManageStaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_msManageStaffActionPerformed
-        // TODO add your handling code here:
         CardLayout cl = (CardLayout)(getContentPane().getLayout());
         cl.show(getContentPane(), "managestaff");
+        loadEmployeeTable();
+
     }//GEN-LAST:event_msManageStaffActionPerformed
 
     private void msAdminDashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_msAdminDashboardActionPerformed
@@ -1952,41 +2014,6 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void generatePayrollActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generatePayrollActionPerformed
         // TODO add your handling code here:
-        String Ccode = coursecode.getText();
-        String CTitle = coursetitle.getText();
-        String Cunit = units.getText();
-
-        if (Ccode.isEmpty() || CTitle.isEmpty() || Cunit.isEmpty() ) {
-            JOptionPane.showMessageDialog(this, "Please fill up all fields");
-            return;
-        }
-        try {
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-
-            String serverName = "jdbc:sqlserver://localhost:1433;" +
-            "databaseName = TestDB;" +
-            "user = sa;" +
-            "password = 12345;"+
-            "encypt = true;"+
-            "trustServerCertificate = true;";
-
-            Connection con = DriverManager.getConnection(serverName);
-
-            String sql = "INSERT INTO coursetable (course_code, course_title, units) VALUES ( ?, ?, ?)";
-
-            PreparedStatement pst = con.prepareStatement(sql);
-
-            pst.setString(1, coursecode.getText());
-            pst.setString(2, coursetitle.getText());
-            pst.setString(3, units.getText());
-            pst.executeUpdate();
-
-            JOptionPane.showMessageDialog(this, "Course Saved!");
-            loadCourse();
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
-        }
     }//GEN-LAST:event_generatePayrollActionPerformed
 
     private void finalizePayrollActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finalizePayrollActionPerformed
@@ -2002,7 +2029,8 @@ public class Dashboard extends javax.swing.JFrame {
     private void gpManageStaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gpManageStaffActionPerformed
         // TODO add your handling code here:
     CardLayout cl = (CardLayout)(getContentPane().getLayout());
-        cl.show(getContentPane(), "managestaff");                                         
+        cl.show(getContentPane(), "managestaff");   
+        loadEmployeeTable();
 
     }//GEN-LAST:event_gpManageStaffActionPerformed
 
@@ -2017,9 +2045,83 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_userIDTxtActionPerformed
 
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
-        // TODO add your handling code here:
-        CardLayout cl = (CardLayout)(getContentPane().getLayout());
-        cl.show(getContentPane(), "viewpayslip");
+    String userID = userIDTxt.getText().trim();
+    String password = new String(passTxt.getPassword()).trim();
+    String selectedRole = roleCB.getSelectedItem() != null ? roleCB.getSelectedItem().toString() : "";
+
+    if (userID.isEmpty() || password.isEmpty() || selectedRole.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Please fill in all fields and select a role.");
+        return;
+    }
+
+    try {
+        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+
+        String serverName = "jdbc:sqlserver://localhost:1433;" +
+                "databaseName=EmployeePayroll;" +
+                "user=sa;" +
+                "password=12345;" +
+                "encrypt=true;" +
+                "trustServerCertificate=true;";
+
+        Connection con = DriverManager.getConnection(serverName);
+
+        // Hash the entered password using SHA-256 to match stored hash
+        java.security.MessageDigest md = java.security.MessageDigest.getInstance("SHA-256");
+        byte[] hashBytes = md.digest(password.getBytes());
+        StringBuilder sb = new StringBuilder();
+        for (byte b : hashBytes) {
+            sb.append(String.format("%02x", b));
+        }
+        String hashedPassword = sb.toString();
+
+        String sql = "SELECT u.role, u.employee_id FROM users u " +
+                     "WHERE u.username = ? AND u.password_hash = ? AND u.role = ? AND u.is_active = 1";
+
+        PreparedStatement pst = con.prepareStatement(sql);
+        pst.setString(1, userID);
+        pst.setString(2, hashedPassword);
+        pst.setString(3, selectedRole);
+
+        ResultSet rs = pst.executeQuery();
+
+        if (rs.next()) {
+            String role = rs.getString("role");
+            CardLayout cl = (CardLayout)(getContentPane().getLayout());
+
+            switch (role) {
+                case "Admin":
+                    cl.show(getContentPane(), "adminDashboard");
+                    loadEmployees() ;
+                    break;
+                    
+                case "Manager":
+                    cl.show(getContentPane(), "managerdashboard");
+                    // Optional: load manager dashboard data here
+                    break;
+                case "Employee":
+                    cl.show(getContentPane(), "viewpayslip");
+                    // Optional: load employee payslip data here
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(this, "Unknown role. Contact administrator.");
+            }
+
+            // Clear fields after login
+            userIDTxt.setText("");
+            passTxt.setText("");
+            roleCB.setSelectedIndex(-1);
+
+        } else {
+            JOptionPane.showMessageDialog(this, "Invalid credentials or role mismatch. Please try again.");
+        }
+
+        con.close();
+
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Login error: " + e.getMessage());
+    }
+
     }//GEN-LAST:event_loginBtnActionPerformed
 
     private void payrollBtnjButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_payrollBtnjButton13ActionPerformed
@@ -2032,6 +2134,7 @@ public class Dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
         CardLayout cl = (CardLayout)(getContentPane().getLayout());
         cl.show(getContentPane(), "managestaff");
+        loadEmployeeTable();
     }//GEN-LAST:event_mngStaffBtnjButton12ActionPerformed
 
     private void dasboardBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dasboardBtnActionPerformed
@@ -2194,51 +2297,161 @@ public class Dashboard extends javax.swing.JFrame {
         CardLayout cl = (CardLayout)(getContentPane().getLayout());
         cl.show(getContentPane(), "login");
     }//GEN-LAST:event_adLogout7MouseClicked
-    public void loadStudents(){
-         try {
-           Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-           
-           String url = "jdbc:sqlserver://localhost:1433;" +
-                               "databaseName = TestDB;" +
-                               "user = sa;" +
-                               "password = 12345;"+
-                               "encypt = true;"+
-                               "trustServerCertificate = true;";
-           Connection con = DriverManager.getConnection(url);
-           
-           String loadQuery = "SELECT student_id, first_name, last_name, program, year_level FROM students";
-           PreparedStatement ps = con.prepareStatement(loadQuery);
-           ResultSet rs = ps.executeQuery();
-           DefaultTableModel model = (DefaultTableModel)studtable.getModel();
-           model.setRowCount(0);
-          
-           while(rs.next()){
-               String[]data = {rs.getString("student_id"),rs.getString("first_name"),rs.getString("last_name"), rs.getString("program"), rs.getString("year_level")};           
-               model.addRow(data);
-           }
-        
-     }catch(Exception e){
-            JOptionPane.showMessageDialog(this, e.getMessage());
-        }
+
+    private void msUpdateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_msUpdateBtnActionPerformed
+     if (selectedEmployeeId <= 0) {
+        JOptionPane.showMessageDialog(this, "Please select an employee from the table first.");
+        return;
+    }
+
+    String fullName = fullNameTxt.getText().trim();
+    String position = positionCB.getSelectedItem() != null ? positionCB.getSelectedItem().toString() : "";
+    String salary = salaryTxt.getText().trim();
+    String status = statusCB.getSelectedItem() != null ? statusCB.getSelectedItem().toString() : "";
+    java.util.Date dateHired = dateHiredDC.getDate();
+
+    if (fullName.isEmpty() || position.isEmpty() || salary.isEmpty() || status.isEmpty() || dateHired == null) {
+        JOptionPane.showMessageDialog(this, "Please fill in all fields.");
+        return;
     }
 
     try {
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+        String url = "jdbc:sqlserver://localhost:1433;" +
+                "databaseName=EmployeePayroll;" +
+                "user=sa;password=12345;" +
+                "encrypt=true;trustServerCertificate=true;";
+        Connection con = DriverManager.getConnection(url);
 
-        String serverName = "jdbc:sqlserver://localhost:1433;" +
-                            "databaseName=TestDB;" +
-                            "user=sa;" +
-                            "password=12345;" +
-                            "encrypt=true;" +
-                            "trustServerCertificate=true;";
+        String formattedDate = new java.text.SimpleDateFormat("yyyy-MM-dd").format(dateHired);
 
-        Connection con = DriverManager.getConnection(serverName);
+        String sql = "UPDATE Employee SET full_name=?, position=?, basic_salary=?, employment_status=?, date_hired=? WHERE employee_id=?";
+        PreparedStatement pst = con.prepareStatement(sql);
+        pst.setString(1, fullName);
+        pst.setString(2, position);
+        pst.setDouble(3, Double.parseDouble(salary));
+        pst.setString(4, status);
+        pst.setString(5, formattedDate);
+        pst.setInt(6, selectedEmployeeId);
+        pst.executeUpdate();
 
-        String loadQuery = "SELECT e.student_id, s.first_name, e.course_id, c.course_title, e.semester, e.year " +
-                           "FROM enrollment e " +
-                           "JOIN Students s ON e.student_id = s.student_id " +
-                           "JOIN coursetable c ON e.course_id = c.course_id";
+        JOptionPane.showMessageDialog(this, "Employee updated successfully!");
+        con.close();
+        msClrBtnActionPerformed(null);
+        loadEmployeeTable();
 
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Invalid salary. Please enter a valid number.");
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+    }
+
+    }//GEN-LAST:event_msUpdateBtnActionPerformed
+
+    private void msDeleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_msDeleteBtnActionPerformed
+       
+    if (selectedEmployeeId <= 0) {
+        JOptionPane.showMessageDialog(this, "Please select an employee from the table first.");
+        return;
+    }
+
+    int confirm = JOptionPane.showConfirmDialog(this,
+        "Are you sure you want to delete this employee?",
+        "Confirm Delete", JOptionPane.YES_NO_OPTION);
+
+    if (confirm != JOptionPane.YES_OPTION) return;
+
+    try {
+        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+        String url = "jdbc:sqlserver://localhost:1433;" +
+                "databaseName=EmployeePayroll;" +
+                "user=sa;password=12345;" +
+                "encrypt=true;trustServerCertificate=true;";
+        Connection con = DriverManager.getConnection(url);
+
+        // Delete from users first (foreign key constraint)
+        String deleteUser = "DELETE FROM users WHERE employee_id = ?";
+        PreparedStatement pst1 = con.prepareStatement(deleteUser);
+        pst1.setInt(1, selectedEmployeeId);
+        pst1.executeUpdate();
+
+        // Then delete from Attendance (if any)
+        String deleteAttendance = "DELETE FROM Attendance WHERE employee_id = ?";
+        PreparedStatement pst2 = con.prepareStatement(deleteAttendance);
+        pst2.setInt(1, selectedEmployeeId);
+        pst2.executeUpdate();
+
+        // Then delete from payroll (if any)
+        String deletePayroll = "DELETE FROM payroll WHERE employee_id = ?";
+        PreparedStatement pst3 = con.prepareStatement(deletePayroll);
+        pst3.setInt(1, selectedEmployeeId);
+        pst3.executeUpdate();
+
+        // Finally delete the employee
+        String deleteEmp = "DELETE FROM Employee WHERE employee_id = ?";
+        PreparedStatement pst4 = con.prepareStatement(deleteEmp);
+        pst4.setInt(1, selectedEmployeeId);
+        pst4.executeUpdate();
+
+        JOptionPane.showMessageDialog(this, "Employee deleted successfully!");
+        con.close();
+        msClrBtnActionPerformed(null);
+        loadEmployeeTable();
+
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+    }
+
+    }//GEN-LAST:event_msDeleteBtnActionPerformed
+    public void loadEmployees() {
+    try {
+        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+
+        String url = "jdbc:sqlserver://localhost:1433;" +
+                "databaseName=EmployeePayroll;" +   // <-- tamang DB name, walang spaces
+                "user=sa;" +
+                "password=12345;" +
+                "encrypt=true;" +                   // <-- tamang spelling
+                "trustServerCertificate=true;";
+
+        Connection con = DriverManager.getConnection(url);
+
+        String loadQuery = "SELECT employee_id, full_name, position, basic_salary, employment_status, date_hired FROM Employee";
+        PreparedStatement ps = con.prepareStatement(loadQuery);
+        ResultSet rs = ps.executeQuery();
+
+        DefaultTableModel model = (DefaultTableModel) adminTable.getModel();
+        model.setRowCount(0);
+
+        while (rs.next()) {
+            String[] data = {
+                rs.getString("employee_id"),
+                rs.getString("full_name"),
+                rs.getString("position"),
+                rs.getString("basic_salary"),
+                rs.getString("employment_status"),
+                rs.getString("date_hired")
+            };
+            model.addRow(data);
+        }
+
+        con.close();
+
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+    }
+}
+    
+    public void loadEmployeeTable() {
+    try {
+        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+        String url = "jdbc:sqlserver://localhost:1433;" +
+                "databaseName=EmployeePayroll;" +
+                "user=sa;password=12345;" +
+                "encrypt=true;trustServerCertificate=true;";
+        Connection con = DriverManager.getConnection(url);
+
+        String loadQuery = "SELECT employee_id, full_name, position, basic_salary, employment_status, date_hired FROM Employee";
         PreparedStatement ps = con.prepareStatement(loadQuery);
         ResultSet rs = ps.executeQuery();
 
@@ -2246,41 +2459,50 @@ public class Dashboard extends javax.swing.JFrame {
         model.setRowCount(0);
 
         while (rs.next()) {
-
-            String studentDisplay = rs.getString("student_id") + " - " + rs.getString("first_name");
-            String courseDisplay = rs.getString("course_id") + " - " + rs.getString("course_title");
-
             String[] data = {
-                studentDisplay,
-                courseDisplay,
-                rs.getString("semester"),
-                rs.getString("year")
+                rs.getString("full_name"),
+                rs.getString("position"),
+                rs.getString("basic_salary"),
+                rs.getString("employment_status"),
+                rs.getString("date_hired")
             };
-
             model.addRow(data);
         }
-
-        // Load Students
-        ResultSet rsStud = con.createStatement().executeQuery("SELECT student_id, first_name FROM Students");
-        while (rsStud.next()) {
-            studentid.addItem(rsStud.getString("student_id") + " - " + rsStud.getString("first_name"));
-        }
-
-        // Load Courses
-        ResultSet rsCourse = con.createStatement().executeQuery("SELECT course_id, course_title FROM coursetable");
-        while (rsCourse.next()) {
-            positionCB.addItem(rsCourse.getString("course_id") + " - " + rsCourse.getString("course_title"));
-        }
-
-        // Semester
-        statusCB.addItem("1st Semester");
-        statusCB.addItem("2nd Semester");
+        con.close();
 
     } catch (Exception e) {
-        JOptionPane.showMessageDialog(this, e.getMessage());
+        JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
     }
 }
+    
+public void loadSelectedEmployee(String fullName) {
+    try {
+        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+        String url = "jdbc:sqlserver://localhost:1433;" +
+                "databaseName=EmployeePayroll;" +
+                "user=sa;password=12345;" +
+                "encrypt=true;trustServerCertificate=true;";
+        Connection con = DriverManager.getConnection(url);
 
+        String sql = "SELECT * FROM Employee WHERE full_name = ?";
+        PreparedStatement ps = con.prepareStatement(sql);
+        ps.setString(1, fullName);
+        ResultSet rs = ps.executeQuery();
+
+        if (rs.next()) {
+            selectedEmployeeId = rs.getInt("employee_id");
+            fullNameTxt.setText(rs.getString("full_name"));
+            positionCB.setSelectedItem(rs.getString("position"));
+            salaryTxt.setText(rs.getString("basic_salary"));
+            statusCB.setSelectedItem(rs.getString("employment_status"));
+            dateHiredDC.setDate(rs.getDate("date_hired"));
+        }
+        con.close();
+
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+    }
+}
         public void loadCourse(){
                  try {
                    Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -2356,6 +2578,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel adLogout7;
     private javax.swing.JPanel adminDashboard;
     private javax.swing.JPanel adminPanel;
+    private javax.swing.JTable adminTable;
     private javax.swing.JPanel alNavPanel;
     private javax.swing.JButton atAttendanceBtn;
     private javax.swing.JButton atClrBtn;
@@ -2435,11 +2658,13 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JButton mngStaffBtn;
     private javax.swing.JButton msAdminDashboard;
     private javax.swing.JButton msClrBtn;
+    private javax.swing.JButton msDeleteBtn;
     private javax.swing.JButton msGeneratePayroll;
     private javax.swing.JPanel msHeader;
     private javax.swing.JPanel msHeader1;
     private javax.swing.JButton msManageStaff;
     private javax.swing.JButton msSaveBtn;
+    private javax.swing.JButton msUpdateBtn;
     private javax.swing.JLabel navGP;
     private javax.swing.JLabel navGP1;
     private javax.swing.JLabel navGP2;
@@ -2472,7 +2697,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JTextField salaryTxt;
     private com.toedter.calendar.JDateChooser selectDate;
     private javax.swing.JComboBox<String> statusCB;
-    private javax.swing.JTable studtable;
     private javax.swing.JTextField timeINTxt;
     private javax.swing.JTextField timeOutTxt;
     private javax.swing.JLabel titleLbl;
