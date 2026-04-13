@@ -248,41 +248,35 @@
                           <Component id="jScrollPane4" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <Component id="jLabelStatus" pref="0" max="32767" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="statusCB" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                              <Group type="102" attributes="0">
-                                                  <Component id="jLabelSalary" min="-2" pref="74" max="-2" attributes="0"/>
-                                                  <EmptySpace max="32767" attributes="0"/>
-                                                  <Component id="salaryTxt" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" attributes="0">
-                                                  <Group type="103" groupAlignment="1" attributes="0">
-                                                      <Component id="jLabelFullName" min="-2" pref="87" max="-2" attributes="0"/>
-                                                      <Component id="jLabelPosition" pref="0" max="32767" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="1" attributes="0">
-                                                      <Component id="positionCB" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="fullNameTxt" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                          </Group>
-                                      </Group>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jLabelSalary" min="-2" pref="74" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="salaryTxt" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="jLabelFullName" min="-2" pref="87" max="-2" attributes="0"/>
+                                          <Component id="jLabelPosition" pref="0" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="positionCB" min="-2" max="-2" attributes="0"/>
+                                          <Component id="fullNameTxt" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabelDateHired" min="-2" pref="79" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="dateHiredDC" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabelStatus" min="-2" pref="87" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="statusCB" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
+                              <EmptySpace pref="65" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="msUpdateBtn" alignment="1" min="-2" pref="118" max="-2" attributes="0"/>
                                   <Component id="msSaveBtn" alignment="1" min="-2" pref="118" max="-2" attributes="0"/>
@@ -345,10 +339,13 @@
                                               <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="3" attributes="0">
                                                   <Component id="jLabelStatus" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="statusCB" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <Component id="statusCB" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="jLabelDateHired" min="-2" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="jLabelDateHired" max="32767" attributes="0"/>
+                                                  <Component id="dateHiredDC" max="32767" attributes="0"/>
+                                              </Group>
                                               <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                                               <Component id="jLabelEmployeesDirectory" min="-2" max="-2" attributes="0"/>
                                           </Group>
@@ -895,6 +892,8 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="msDeleteBtnActionPerformed"/>
               </Events>
             </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="dateHiredDC">
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="generatepayroll">
@@ -923,8 +922,16 @@
                       <Component id="navPanelGP" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jScrollPane5" min="-2" pref="566" max="-2" attributes="0"/>
+                                  <Component id="jLabelPayrollDetails" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="adDateChooser" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="generatePayroll" min="-2" pref="129" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
@@ -932,13 +939,6 @@
                                   </Group>
                                   <Component id="jLabelSelectDate" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabelGeneratePayroll" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jScrollPane5" min="-2" pref="566" max="-2" attributes="0"/>
-                                  <Component id="jLabelPayrollDetails" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -958,7 +958,9 @@
                               <Component id="jLabelGeneratePayroll" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jLabelSelectDate" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="adDateChooser" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="generatePayroll" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
                                   <Component id="finalizePayroll" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
@@ -1338,6 +1340,8 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="generatePayrollActionPerformed"/>
               </Events>
             </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="adDateChooser">
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="adminDashboard">
@@ -1564,42 +1568,42 @@
                     </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="6" rowCount="0">
-                        <Column editable="true" title="EmployeeID" type="java.lang.Object"/>
-                        <Column editable="true" title="Full Name" type="java.lang.Object"/>
-                        <Column editable="true" title="Position" type="java.lang.Object"/>
-                        <Column editable="true" title="Basic Salary" type="java.lang.Object"/>
-                        <Column editable="true" title="Status" type="java.lang.Object"/>
-                        <Column editable="true" title="Date Hired" type="java.lang.Object"/>
+                        <Column editable="false" title="EmployeeID" type="java.lang.Object"/>
+                        <Column editable="false" title="Full Name" type="java.lang.Object"/>
+                        <Column editable="false" title="Position" type="java.lang.Object"/>
+                        <Column editable="false" title="Basic Salary" type="java.lang.Object"/>
+                        <Column editable="false" title="Status" type="java.lang.Object"/>
+                        <Column editable="false" title="Date Hired" type="java.lang.Object"/>
                       </Table>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                       <TableColumnModel selectionModel="0">
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                           <Title/>
                           <Editor/>
                           <Renderer/>
                         </Column>
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                           <Title/>
                           <Editor/>
                           <Renderer/>
                         </Column>
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                           <Title/>
                           <Editor/>
                           <Renderer/>
                         </Column>
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                           <Title/>
                           <Editor/>
                           <Renderer/>
                         </Column>
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                           <Title/>
                           <Editor/>
                           <Renderer/>
                         </Column>
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                           <Title/>
                           <Editor/>
                           <Renderer/>
@@ -2526,10 +2530,7 @@
                                               <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                                               <Component id="jLabelSalary1" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="timeINTxt" min="-2" pref="30" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="timeINTxt" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
@@ -3400,26 +3401,28 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="gpHeader2" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Component id="navPanelGP2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <Component id="navPanelGP2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jLabelGeneratePayroll2" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabelGeneratePayroll2" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel1" alignment="0" min="-2" pref="70" max="-2" attributes="0"/>
-                                          <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jSpinner1" min="-2" pref="140" max="-2" attributes="0"/>
+                                  <Component id="jLabel1" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
+                                  <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="otHrsSpinner" min="-2" pref="140" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="reqBtn" min="-2" pref="105" max="-2" attributes="0"/>
                                   </Group>
+                                  <Component id="reqOTDC" min="-2" pref="403" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="340" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -3429,22 +3432,24 @@
                       <Component id="gpHeader2" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="navPanelGP2" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                               <Component id="jLabelGeneratePayroll2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jSpinner1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="reqOTDC" min="-2" pref="219" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="otHrsSpinner" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="reqBtn" min="-2" pref="41" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="navPanelGP2" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -3609,7 +3614,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="184" max="-2" attributes="0"/>
                           <Component id="jLabelGPHeader2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="210" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -3656,7 +3661,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI Semibold" size="14" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Date:"/>
+                <Property name="text" type="java.lang.String" value="Choose Date:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel3">
@@ -3667,9 +3672,9 @@
                 <Property name="text" type="java.lang.String" value="OT Hours"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JSpinner" name="jSpinner1">
+            <Component class="javax.swing.JSpinner" name="otHrsSpinner">
             </Component>
-            <Component class="javax.swing.JButton" name="jButton1">
+            <Component class="javax.swing.JButton" name="reqBtn">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="30" green="3f" red="59" type="rgb"/>
@@ -3683,8 +3688,20 @@
                 <Property name="text" type="java.lang.String" value="Request"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="reqBtnActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="com.toedter.calendar.JCalendar" name="reqOTDC">
+              <Properties>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder roundedCorners="true" thickness="0"/>
+                  </Border>
+                </Property>
+                <Property name="date" type="java.util.Date" editor="org.netbeans.beaninfo.editors.DateEditor">
+                  <SerializedValue value="-84,-19,0,5,115,114,0,14,106,97,118,97,46,117,116,105,108,46,68,97,116,101,104,106,-127,1,75,89,116,25,3,0,0,120,112,119,8,0,0,1,-99,-123,-49,97,-16,120"/>
+                </Property>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
