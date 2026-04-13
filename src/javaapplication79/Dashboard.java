@@ -15,6 +15,7 @@ public class Dashboard extends javax.swing.JFrame {
         initComponents();
         // Employee table
     employeeTable.addMouseListener(new java.awt.event.MouseAdapter() {
+        @Override
         public void mouseClicked(java.awt.event.MouseEvent evt) {
             int row = employeeTable.getSelectedRow();
             if (row >= 0) {
@@ -33,6 +34,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     // Auto-format Time In (auto colon after 2 digits)
     timeINTxt.addKeyListener(new java.awt.event.KeyAdapter() {
+        @Override
         public void keyTyped(java.awt.event.KeyEvent evt) {
             char c = evt.getKeyChar();
             String current = timeINTxt.getText();
@@ -51,6 +53,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     // Auto-format Time Out (auto colon after 2 digits)
     timeOutTxt.addKeyListener(new java.awt.event.KeyAdapter() {
+        @Override
         public void keyTyped(java.awt.event.KeyEvent evt) {
             char c = evt.getKeyChar();
             String current = timeOutTxt.getText();
@@ -70,6 +73,7 @@ public class Dashboard extends javax.swing.JFrame {
 }
     
     private int selectedEmployeeId = -1;
+    private int loggedInEmployeeId = -1;
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -111,6 +115,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabelDateHired = new javax.swing.JLabel();
         msUpdateBtn = new javax.swing.JButton();
         msDeleteBtn = new javax.swing.JButton();
+        dateHiredDC = new com.toedter.calendar.JDateChooser();
         generatepayroll = new javax.swing.JPanel();
         navPanelGP = new javax.swing.JPanel();
         gpAdminDashBoard = new javax.swing.JButton();
@@ -127,6 +132,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabelSelectDate = new javax.swing.JLabel();
         jLabelGeneratePayroll = new javax.swing.JLabel();
         generatePayroll = new javax.swing.JButton();
+        adDateChooser = new com.toedter.calendar.JDateChooser();
         adminDashboard = new javax.swing.JPanel();
         dhNavPanel = new javax.swing.JPanel();
         dasboardBtn = new javax.swing.JButton();
@@ -213,8 +219,9 @@ public class Dashboard extends javax.swing.JFrame {
         jLabelGeneratePayroll2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jSpinner1 = new javax.swing.JSpinner();
-        jButton1 = new javax.swing.JButton();
+        otHrsSpinner = new javax.swing.JSpinner();
+        reqBtn = new javax.swing.JButton();
+        reqOTDC = new com.toedter.calendar.JCalendar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 204, 204));
@@ -582,31 +589,28 @@ public class Dashboard extends javax.swing.JFrame {
                     .addComponent(jScrollPane4)
                     .addGroup(managestaffLayout.createSequentialGroup()
                         .addGap(39, 39, 39)
-                        .addGroup(managestaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(managestaffLayout.createSequentialGroup()
-                                .addGroup(managestaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(managestaffLayout.createSequentialGroup()
-                                        .addComponent(jLabelStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(statusCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(29, 29, 29))
-                                    .addGroup(managestaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addGroup(managestaffLayout.createSequentialGroup()
-                                            .addComponent(jLabelSalary, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(salaryTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(managestaffLayout.createSequentialGroup()
-                                            .addGroup(managestaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(jLabelFullName, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(jLabelPosition, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addGroup(managestaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(positionCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(fullNameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(managestaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, managestaffLayout.createSequentialGroup()
+                                .addComponent(jLabelSalary, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(salaryTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, managestaffLayout.createSequentialGroup()
+                                .addGroup(managestaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabelFullName, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabelPosition, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(managestaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(positionCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(fullNameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(managestaffLayout.createSequentialGroup()
                                 .addComponent(jLabelDateHired, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(dateHiredDC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(managestaffLayout.createSequentialGroup()
+                                .addComponent(jLabelStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(statusCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
                         .addGroup(managestaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(msUpdateBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(msSaveBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -660,7 +664,9 @@ public class Dashboard extends javax.swing.JFrame {
                                             .addComponent(jLabelStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(statusCB, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabelDateHired, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(managestaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jLabelDateHired, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(dateHiredDC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                         .addGap(40, 40, 40)
                                         .addComponent(jLabelEmployeesDirectory)))))
                         .addGap(18, 18, 18)
@@ -843,19 +849,20 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(navPanelGP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(generatepayrollLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(generatepayrollLayout.createSequentialGroup()
-                        .addGap(26, 26, 26)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(generatepayrollLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 566, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelPayrollDetails)))
+                    .addGroup(generatepayrollLayout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(generatepayrollLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(adDateChooser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(generatepayrollLayout.createSequentialGroup()
                                 .addComponent(generatePayroll, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(51, 51, 51)
                                 .addComponent(finalizePayroll, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabelSelectDate)
-                            .addComponent(jLabelGeneratePayroll)))
-                    .addGroup(generatepayrollLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(generatepayrollLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 566, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelPayrollDetails))))
+                            .addComponent(jLabelGeneratePayroll))))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
         generatepayrollLayout.setVerticalGroup(
@@ -870,7 +877,9 @@ public class Dashboard extends javax.swing.JFrame {
                         .addComponent(jLabelGeneratePayroll)
                         .addGap(18, 18, 18)
                         .addComponent(jLabelSelectDate)
-                        .addGap(44, 44, 44)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(adDateChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(generatepayrollLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(generatePayroll, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(finalizePayroll, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -979,9 +988,25 @@ public class Dashboard extends javax.swing.JFrame {
             new String [] {
                 "EmployeeID", "Full Name", "Position", "Basic Salary", "Status", "Date Hired"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         adminTable.setSelectionForeground(new java.awt.Color(255, 102, 102));
         jScrollPane3.setViewportView(adminTable);
+        if (adminTable.getColumnModel().getColumnCount() > 0) {
+            adminTable.getColumnModel().getColumn(0).setResizable(false);
+            adminTable.getColumnModel().getColumn(1).setResizable(false);
+            adminTable.getColumnModel().getColumn(2).setResizable(false);
+            adminTable.getColumnModel().getColumn(3).setResizable(false);
+            adminTable.getColumnModel().getColumn(4).setResizable(false);
+            adminTable.getColumnModel().getColumn(5).setResizable(false);
+        }
 
         titlePanel.setBackground(new java.awt.Color(255, 204, 204));
         titlePanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 102, 102), 4, true));
@@ -1684,9 +1709,7 @@ public class Dashboard extends javax.swing.JFrame {
                                     .addGroup(attendancelogLayout.createSequentialGroup()
                                         .addGap(17, 17, 17)
                                         .addComponent(jLabelSalary1))
-                                    .addGroup(attendancelogLayout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(timeINTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(timeINTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(attendancelogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(attendancelogLayout.createSequentialGroup()
                                         .addGap(21, 21, 21)
@@ -1963,7 +1986,7 @@ public class Dashboard extends javax.swing.JFrame {
             .addGroup(gpHeader2Layout.createSequentialGroup()
                 .addGap(184, 184, 184)
                 .addComponent(jLabelGPHeader2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(210, Short.MAX_VALUE))
         );
         gpHeader2Layout.setVerticalGroup(
             gpHeader2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1978,20 +2001,23 @@ public class Dashboard extends javax.swing.JFrame {
         jLabelGeneratePayroll2.setText("REQUEST OVERTIME ");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        jLabel1.setText("Date:");
+        jLabel1.setText("Choose Date:");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel3.setText("OT Hours");
 
-        jButton1.setBackground(new java.awt.Color(89, 63, 48));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Request");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        reqBtn.setBackground(new java.awt.Color(89, 63, 48));
+        reqBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        reqBtn.setForeground(new java.awt.Color(255, 255, 255));
+        reqBtn.setText("Request");
+        reqBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                reqBtnActionPerformed(evt);
             }
         });
+
+        reqOTDC.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
+        reqOTDC.setDate(new java.util.Date(1776066454000L));
 
         javax.swing.GroupLayout requestOtLayout = new javax.swing.GroupLayout(requestOt);
         requestOt.setLayout(requestOtLayout);
@@ -1999,21 +2025,23 @@ public class Dashboard extends javax.swing.JFrame {
             requestOtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(gpHeader2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(requestOtLayout.createSequentialGroup()
-                .addGroup(requestOtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1)
+                .addComponent(navPanelGP2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addGroup(requestOtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabelGeneratePayroll2)
                     .addGroup(requestOtLayout.createSequentialGroup()
-                        .addComponent(navPanelGP2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
+                        .addGap(16, 16, 16)
                         .addGroup(requestOtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelGeneratePayroll2)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3))
+                        .addGap(18, 18, 18)
+                        .addGroup(requestOtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(requestOtLayout.createSequentialGroup()
-                                .addGap(28, 28, 28)
-                                .addGroup(requestOtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(340, Short.MAX_VALUE))
+                                .addComponent(otHrsSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(reqBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(reqOTDC, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         requestOtLayout.setVerticalGroup(
             requestOtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2021,20 +2049,21 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(gpHeader2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(requestOtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(requestOtLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(navPanelGP2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(requestOtLayout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addComponent(jLabelGeneratePayroll2)
                         .addGap(20, 20, 20)
-                        .addComponent(jLabel1)
-                        .addGap(22, 22, 22)
-                        .addGroup(requestOtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(requestOtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(reqOTDC, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(requestOtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
-                            .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(36, 36, 36)
-                        .addComponent(jButton1)
-                        .addContainerGap())
-                    .addGroup(requestOtLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(navPanelGP2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(otHrsSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(reqBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())))
         );
 
         employeePanel.add(requestOt, "card3");
@@ -2048,7 +2077,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     
     private void msSaveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_msSaveBtnActionPerformed
-   String fullName = fullNameTxt.getText().trim();
+    String fullName = fullNameTxt.getText().trim();
     String position = positionCB.getSelectedItem() != null ? positionCB.getSelectedItem().toString() : "";
     String salary = salaryTxt.getText().trim();
     String status = statusCB.getSelectedItem() != null ? statusCB.getSelectedItem().toString() : "";
@@ -2461,6 +2490,12 @@ public class Dashboard extends javax.swing.JFrame {
 
         if (rs.next()) {
             String role = rs.getString("role");
+
+            if ("Employee".equals(role)) {
+                this.loggedInEmployeeId = rs.getInt("employee_id");
+            } else {
+                this.loggedInEmployeeId = -1;
+            }
             CardLayout cl = (CardLayout)(getContentPane().getLayout());
 
             switch (role) {
@@ -2584,7 +2619,7 @@ public class Dashboard extends javax.swing.JFrame {
         timeINTxt.setText("");
         timeOutTxt.setText("");
         otStatusCB.setSelectedIndex(-1);
-        jDateChooser1.setDate(null);
+        dateHiredDC.setDate(null);
 
     }//GEN-LAST:event_atClrBtnActionPerformed
 
@@ -2595,7 +2630,7 @@ public class Dashboard extends javax.swing.JFrame {
     String timeOut = timeOutTxt.getText().trim();
     String otStatus = otStatusCB.getSelectedItem() != null ?
         otStatusCB.getSelectedItem().toString() : "None";
-    java.util.Date workDate = jDateChooser1.getDate();
+    java.util.Date workDate = dateHiredDC.getDate();
 
     if (selectedEmployee.isEmpty() || timeIn.isEmpty() || timeOut.isEmpty() || workDate == null) {
         JOptionPane.showMessageDialog(this, "Please fill in all fields.");
@@ -2779,49 +2814,49 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_dhNavPanel2KeyPressed
 
     private void adLogout1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adLogout1MouseClicked
-        // TODO add your handling code here:
+        this.loggedInEmployeeId = -1;
         CardLayout cl = (CardLayout)(getContentPane().getLayout());
         cl.show(getContentPane(), "login");
     }//GEN-LAST:event_adLogout1MouseClicked
 
     private void adLogout2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adLogout2MouseClicked
-        // TODO add your handling code here:
+        this.loggedInEmployeeId = -1;
         CardLayout cl = (CardLayout)(getContentPane().getLayout());
         cl.show(getContentPane(), "login");
     }//GEN-LAST:event_adLogout2MouseClicked
 
     private void adLogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adLogoutMouseClicked
-        // TODO add your handling code here:
+        this.loggedInEmployeeId = -1;
         CardLayout cl = (CardLayout)(getContentPane().getLayout());
         cl.show(getContentPane(), "login");
     }//GEN-LAST:event_adLogoutMouseClicked
 
     private void adLogout3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adLogout3MouseClicked
-        // TODO add your handling code here:
+        this.loggedInEmployeeId = -1;
         CardLayout cl = (CardLayout)(getContentPane().getLayout());
         cl.show(getContentPane(), "login");
     }//GEN-LAST:event_adLogout3MouseClicked
 
     private void adLogout4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adLogout4MouseClicked
-        // TODO add your handling code here:
+        this.loggedInEmployeeId = -1;
         CardLayout cl = (CardLayout)(getContentPane().getLayout());
         cl.show(getContentPane(), "login");
     }//GEN-LAST:event_adLogout4MouseClicked
 
     private void adLogout5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adLogout5MouseClicked
-        // TODO add your handling code here:
+        this.loggedInEmployeeId = -1;
         CardLayout cl = (CardLayout)(getContentPane().getLayout());
         cl.show(getContentPane(), "login");
     }//GEN-LAST:event_adLogout5MouseClicked
 
     private void adLogout6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adLogout6MouseClicked
-        // TODO add your handling code here:
+        this.loggedInEmployeeId = -1;
         CardLayout cl = (CardLayout)(getContentPane().getLayout());
         cl.show(getContentPane(), "login");
     }//GEN-LAST:event_adLogout6MouseClicked
 
     private void adLogout7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adLogout7MouseClicked
-        // TODO add your handling code here:
+        this.loggedInEmployeeId = -1;
         CardLayout cl = (CardLayout)(getContentPane().getLayout());
         cl.show(getContentPane(), "login");
     }//GEN-LAST:event_adLogout7MouseClicked
@@ -2944,9 +2979,153 @@ public class Dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_orDeclineBtnActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private static final String DB_URL =
+        "jdbc:sqlserver://localhost:1433;" +
+        "databaseName=EmployeePayroll;" +
+        "user=sa;password=12345;" +
+        "encrypt=true;trustServerCertificate=true;";
+
+    private Connection openConnection() throws Exception {
+        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+        return DriverManager.getConnection(DB_URL);
+    }
+
+    
+    private void reqBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reqBtnActionPerformed
+        java.util.Date selectedDate = reqOTDC.getDate();
+        double requestedOtHours = ((Number) otHrsSpinner.getValue()).doubleValue();
+
+        if (loggedInEmployeeId <= 0) {
+            JOptionPane.showMessageDialog(this, "Session expired. Please log in again.");
+            return;
+        }
+        if (selectedDate == null) {
+            JOptionPane.showMessageDialog(this, "Please select a work date.");
+            return;
+        }
+        if (requestedOtHours <= 0) {
+            JOptionPane.showMessageDialog(this, "Overtime hours must be greater than 0.");
+            return;
+        }
+        if (requestedOtHours > 6.99) {
+            JOptionPane.showMessageDialog(this, "Maximum OT is 6.99 hours (5:00 PM to 11:59 PM).");
+            return;
+        }
+
+        java.time.LocalDate workDate = selectedDate.toInstant()
+                .atZone(java.time.ZoneId.systemDefault())
+                .toLocalDate();
+
+        if (workDate.isAfter(java.time.LocalDate.now())) {
+            JOptionPane.showMessageDialog(this, "Work date cannot be in the future.");
+            return;
+        }
+
+        java.time.LocalTime standardTimeIn = java.time.LocalTime.of(8, 0);
+        java.time.LocalTime shiftEnd = java.time.LocalTime.of(17, 0);
+
+        int otMinutes = (int) Math.round(requestedOtHours * 60.0);
+        java.time.LocalTime computedTimeOut = shiftEnd.plusMinutes(otMinutes);
+
+        if (!computedTimeOut.isAfter(shiftEnd)) {
+            JOptionPane.showMessageDialog(this, "Computed time-out is invalid.");
+            return;
+        }
+
+        double roundedOtHours = Math.round((otMinutes / 60.0) * 100.0) / 100.0;
+
+        try (Connection con = openConnection()) {
+            con.setAutoCommit(false);
+            try {
+                int attendanceId = -1;
+                String existingStatus = null;
+
+                String checkSql =
+                        "SELECT attendance_id, overtime_status " +
+                        "FROM Attendance " +
+                        "WHERE employee_id = ? AND work_date = ?";
+
+                try (PreparedStatement checkPs = con.prepareStatement(checkSql)) {
+                    checkPs.setInt(1, loggedInEmployeeId);
+                    checkPs.setDate(2, java.sql.Date.valueOf(workDate));
+
+                    try (ResultSet rs = checkPs.executeQuery()) {
+                        if (rs.next()) {
+                            attendanceId = rs.getInt("attendance_id");
+                            existingStatus = rs.getString("overtime_status");
+                        }
+                    }
+                }
+
+                if ("Approved".equalsIgnoreCase(existingStatus)) {
+                    throw new IllegalStateException(
+                            "An approved overtime entry already exists for this date."
+                    );
+                }
+                if ("Pending".equalsIgnoreCase(existingStatus)) {
+                    throw new IllegalStateException(
+                            "You already have a pending overtime request for this date."
+                    );
+                }
+
+                if (attendanceId > 0) {
+                    String updateSql =
+                            "UPDATE Attendance SET " +
+                            "time_in = ?, " +
+                            "time_out = ?, " +
+                            "late_minutes = ?, " +
+                            "overtime_hours = ?, " +
+                            "overtime_status = ? " +
+                            "WHERE attendance_id = ?";
+
+                    try (PreparedStatement updatePs = con.prepareStatement(updateSql)) {
+                        updatePs.setTime(1, java.sql.Time.valueOf(standardTimeIn));
+                        updatePs.setTime(2, java.sql.Time.valueOf(computedTimeOut));
+                        updatePs.setInt(3, 0); // 8:00 AM fixed time in
+                        updatePs.setDouble(4, roundedOtHours);
+                        updatePs.setString(5, "Pending");
+                        updatePs.setInt(6, attendanceId);
+                        updatePs.executeUpdate();
+                    }
+                } else {
+                    String insertSql =
+                            "INSERT INTO Attendance " +
+                            "(employee_id, work_date, time_in, time_out, late_minutes, overtime_hours, overtime_status, created_at) " +
+                            "VALUES (?, ?, ?, ?, ?, ?, ?, GETDATE())";
+
+                    try (PreparedStatement insertPs = con.prepareStatement(insertSql)) {
+                        insertPs.setInt(1, loggedInEmployeeId);
+                        insertPs.setDate(2, java.sql.Date.valueOf(workDate));
+                        insertPs.setTime(3, java.sql.Time.valueOf(standardTimeIn));
+                        insertPs.setTime(4, java.sql.Time.valueOf(computedTimeOut));
+                        insertPs.setInt(5, 0);
+                        insertPs.setDouble(6, roundedOtHours);
+                        insertPs.setString(7, "Pending");
+                        insertPs.executeUpdate();
+                    }
+                }
+
+                con.commit();
+
+                JOptionPane.showMessageDialog(this,
+                        "Overtime request submitted successfully.\nStatus: Pending");
+
+                reqOTDC.setDate(new java.util.Date());
+                otHrsSpinner.setValue(1.0);
+
+                // Optional refresh if you show request history/attendance table
+                loadAttendanceTable();
+
+            } catch (Exception ex) {
+                con.rollback();
+                throw ex;
+            }
+        } catch (IllegalStateException ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Error: " + ex.getMessage());
+        }
+    }//GEN-LAST:event_reqBtnActionPerformed
     
     
     public void loadEmployees() {
@@ -3202,6 +3381,7 @@ public void loadSelectedEmployee(String fullName) {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.toedter.calendar.JDateChooser adDateChooser;
     private javax.swing.JLabel adLogout;
     private javax.swing.JLabel adLogout1;
     private javax.swing.JLabel adLogout2;
@@ -3223,6 +3403,7 @@ public void loadSelectedEmployee(String fullName) {
     private javax.swing.JTable attendanceLogTable;
     private javax.swing.JPanel attendancelog;
     private javax.swing.JButton dasboardBtn;
+    private com.toedter.calendar.JDateChooser dateHiredDC;
     private javax.swing.JPanel dhNavPanel;
     private javax.swing.JPanel dhNavPanel2;
     private javax.swing.JComboBox<String> employeeCB;
@@ -3238,7 +3419,6 @@ public void loadSelectedEmployee(String fullName) {
     private javax.swing.JPanel gpHeader1;
     private javax.swing.JPanel gpHeader2;
     private javax.swing.JButton gpManageStaff;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -3273,7 +3453,6 @@ public void loadSelectedEmployee(String fullName) {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JSpinner jSpinner1;
     private javax.swing.JLabel jlabelMDOverview;
     private javax.swing.JLabel jlabelatName;
     private javax.swing.JPanel login;
@@ -3314,6 +3493,7 @@ public void loadSelectedEmployee(String fullName) {
     private javax.swing.JButton orDeclineBtn;
     private javax.swing.JPanel orNavPanel;
     private javax.swing.JButton orOTRequestBtn;
+    private javax.swing.JSpinner otHrsSpinner;
     private javax.swing.JComboBox<String> otStatusCB;
     private javax.swing.JPanel otrequest;
     private javax.swing.JLabel overviewLbl;
@@ -3324,6 +3504,8 @@ public void loadSelectedEmployee(String fullName) {
     private javax.swing.JTable payrollTable;
     private javax.swing.JTable payslipTable;
     private javax.swing.JComboBox<String> positionCB;
+    private javax.swing.JButton reqBtn;
+    private com.toedter.calendar.JCalendar reqOTDC;
     private javax.swing.JPanel requestOt;
     private javax.swing.JButton roPayslipBtn;
     private javax.swing.JButton roRequestOvertimeBtn;
