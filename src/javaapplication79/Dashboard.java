@@ -11,6 +11,53 @@ import javax.swing.table.DefaultTableModel;
 
 public class Dashboard extends javax.swing.JFrame {
 
+    private void loadEmployeePayslipTable() {
+        DefaultTableModel model = (DefaultTableModel) payslipTable.getModel();
+        model.setRowCount(0);
+
+        if (this.loggedInEmployeeId <= 0) {
+        return;
+        }
+
+        String sql =
+        "SELECT pay_period, basic_salary, overtime_pay, thirteenth_month_pay, " +
+        "(basic_salary + overtime_pay + thirteenth_month_pay) AS total_earnings, " +
+        "tax_deduction, late_deduction, net_salary, status " +
+        "FROM payroll " +
+        "WHERE employee_id = ? " +
+        "ORDER BY created_at DESC";
+
+        try (Connection con = openConnection();
+        PreparedStatement ps = con.prepareStatement(sql)) {
+
+        ps.setInt(1, this.loggedInEmployeeId);
+
+        try (ResultSet rs = ps.executeQuery()) {
+            while (rs.next()) {
+                Object[] row = {
+                    rs.getString("pay_period"),
+                    String.format("PHP %,.2f", rs.getDouble("basic_salary")),
+                    String.format("PHP %,.2f", rs.getDouble("overtime_pay")),
+                    String.format("PHP %,.2f", rs.getDouble("thirteenth_month_pay")),
+                    String.format("PHP %,.2f", rs.getDouble("total_earnings")),
+                    String.format("PHP %,.2f", rs.getDouble("tax_deduction")),
+                    String.format("PHP %,.2f", rs.getDouble("late_deduction")),
+                    String.format("PHP %,.2f", rs.getDouble("net_salary")),
+                    rs.getString("status")
+                };
+                model.addRow(row);
+            }
+        }
+
+        if (model.getRowCount() == 0) {
+        JOptionPane.showMessageDialog(this, "No payslip records found for your account.");
+        }
+
+        } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Error loading payslips: " + e.getMessage());
+        }
+    }
+    
     public Dashboard() {
         initComponents();
         // Employee table
@@ -1825,13 +1872,29 @@ public class Dashboard extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Pay Period", "Basic", "OT Pay", "13th Month", "Total Earnings ", "Tax", "Late Deduction", "Net Salary", "Status"
+                "Pay Period", "Basic", "OT Pay", "13th Month", "Total Earnings", "Tax", "Late Deduction", "Net Salary", "Status"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         payslipTable.setSelectionForeground(new java.awt.Color(255, 102, 102));
         jScrollPane9.setViewportView(payslipTable);
         if (payslipTable.getColumnModel().getColumnCount() > 0) {
-            payslipTable.getColumnModel().getColumn(4).setHeaderValue("Status");
+            payslipTable.getColumnModel().getColumn(0).setResizable(false);
+            payslipTable.getColumnModel().getColumn(1).setResizable(false);
+            payslipTable.getColumnModel().getColumn(2).setResizable(false);
+            payslipTable.getColumnModel().getColumn(3).setResizable(false);
+            payslipTable.getColumnModel().getColumn(4).setResizable(false);
+            payslipTable.getColumnModel().getColumn(5).setResizable(false);
+            payslipTable.getColumnModel().getColumn(6).setResizable(false);
+            payslipTable.getColumnModel().getColumn(7).setResizable(false);
+            payslipTable.getColumnModel().getColumn(8).setResizable(false);
         }
 
         titlePanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -2499,19 +2562,16 @@ public class Dashboard extends javax.swing.JFrame {
             CardLayout cl = (CardLayout)(getContentPane().getLayout());
 
             switch (role) {
-                case "Admin":
+                case "Admin" -> {
                     cl.show(getContentPane(), "adminDashboard");
                     loadEmployees() ;
-                    break;
+                }
                     
-                case "Manager":
-                    cl.show(getContentPane(), "managerdashboard");
-                    break;
-                case "Employee":
-                    cl.show(getContentPane(), "viewpayslip");
-                    break;
-                default:
-                    JOptionPane.showMessageDialog(this, "Unknown role. Contact administrator.");
+                case "Manager" -> cl.show(getContentPane(), "managerdashboard");
+                case "Employee" -> {cl.show(getContentPane(), "viewpayslip");
+                                    loadEmployeePayslipTable();
+                }
+                default -> JOptionPane.showMessageDialog(this, "Unknown role. Contact administrator.");
             }
 
             userIDTxt.setText("");
@@ -2790,6 +2850,7 @@ public class Dashboard extends javax.swing.JFrame {
     private void vpViewPayslipBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vpViewPayslipBtnActionPerformed
         CardLayout cl = (CardLayout)(getContentPane().getLayout());
         cl.show(getContentPane(), "viewpayslip");
+        loadEmployeePayslipTable();
     }//GEN-LAST:event_vpViewPayslipBtnActionPerformed
 
     private void vpRequestOTBtnjButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vpRequestOTBtnjButton12ActionPerformed
@@ -2800,6 +2861,7 @@ public class Dashboard extends javax.swing.JFrame {
     private void roPayslipBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roPayslipBtnActionPerformed
         CardLayout cl = (CardLayout)(getContentPane().getLayout());
         cl.show(getContentPane(), "viewpayslip");
+        loadEmployeePayslipTable();
     }//GEN-LAST:event_roPayslipBtnActionPerformed
 
     private void roRequestOvertimeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roRequestOvertimeBtnActionPerformed
