@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.JRadioButton" name="jRadioButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jRadioButton1"/>
+      </Properties>
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -21,7 +28,7 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
-    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,-83,0,0,3,50"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,-82,0,0,3,50"/>
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
@@ -49,7 +56,7 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="193" max="32767" attributes="0"/>
+                  <EmptySpace pref="194" max="32767" attributes="0"/>
                   <Component id="loginpanel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
               </Group>
@@ -233,14 +240,14 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="msHeader" alignment="0" pref="818" max="32767" attributes="0"/>
+                  <Component id="msHeader" alignment="0" pref="821" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="navPanelMS" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="jLabelManageEmployees" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="447" max="32767" attributes="0"/>
+                              <EmptySpace pref="450" max="32767" attributes="0"/>
                           </Group>
                           <Component id="jScrollPane4" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
@@ -266,18 +273,15 @@
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabelDateHired" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
-                                          <Component id="jLabelStatus" pref="0" max="32767" attributes="0"/>
+                                          <Component id="jLabelDateHired" min="-2" pref="79" max="-2" attributes="0"/>
+                                          <Component id="jLabelStatus" min="-2" pref="59" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <Component id="statusCB" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                                          </Group>
+                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="statusCB" max="32767" attributes="0"/>
                                           <Component id="dateHiredDC" max="32767" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                                      <EmptySpace pref="62" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -303,56 +307,51 @@
                       <Component id="msHeader" pref="68" max="32767" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="navPanelMS" pref="599" max="32767" attributes="0"/>
+                          <Component id="navPanelMS" pref="600" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Component id="jLabelManageEmployees" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="msSaveBtn" alignment="0" min="-2" pref="38" max="-2" attributes="0"/>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="jLabelFullName" min="-2" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Component id="jLabelFullName" min="-2" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                                                      <Component id="msUpdateBtn" min="-2" pref="38" max="-2" attributes="0"/>
-                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                      <Component id="msDeleteBtn" min="-2" pref="38" max="-2" attributes="0"/>
-                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                      <Component id="msClrBtn" min="-2" pref="38" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="jLabelPosition" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                                              <Component id="msUpdateBtn" min="-2" pref="38" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="msDeleteBtn" min="-2" pref="38" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="msClrBtn" min="-2" pref="38" max="-2" attributes="0"/>
                                           </Group>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Component id="fullNameTxt" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="positionCB" min="-2" pref="30" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="jLabelSalary" max="32767" attributes="0"/>
-                                                  <Component id="salaryTxt" max="32767" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="jLabelStatus" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="statusCB" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="jLabelDateHired" max="32767" attributes="0"/>
-                                                  <Component id="dateHiredDC" max="32767" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                                              <Component id="jLabelEmployeesDirectory" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabelPosition" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
+                                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="fullNameTxt" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="positionCB" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="jLabelSalary" max="32767" attributes="0"/>
+                                          <Component id="salaryTxt" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jLabelStatus" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="statusCB" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="jLabelDateHired" max="32767" attributes="0"/>
+                                          <Component id="dateHiredDC" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="jLabelEmployeesDirectory" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -428,7 +427,7 @@
                     <Property name="text" type="java.lang.String" value="Dashboard"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder roundedCorners="true" thickness="2">
+                        <LineBorder roundedCorners="true" thickness="4">
                           <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                         </LineBorder>
                       </Border>
@@ -455,7 +454,7 @@
                     <Property name="text" type="java.lang.String" value="Manage Staff"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder roundedCorners="true" thickness="2">
+                        <LineBorder roundedCorners="true" thickness="4">
                           <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                         </LineBorder>
                       </Border>
@@ -482,7 +481,7 @@
                     <Property name="text" type="java.lang.String" value="Generate Payroll"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder roundedCorners="true" thickness="2">
+                        <LineBorder roundedCorners="true" thickness="4">
                           <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                         </LineBorder>
                       </Border>
@@ -595,7 +594,7 @@
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="16" green="1e" red="2b" type="rgb"/>
+                  <Color blue="5b" green="7b" red="a6" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Employee Directory"/>
               </Properties>
@@ -667,8 +666,10 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Clear"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
-                    <BevelBorder/>
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder roundedCorners="true" thickness="4">
+                      <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
+                    </LineBorder>
                   </Border>
                 </Property>
                 <Property name="focusPainted" type="boolean" value="false"/>
@@ -697,7 +698,7 @@
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="16" green="1e" red="2b" type="rgb"/>
+                  <Color blue="5b" green="7b" red="a6" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Manage Employees"/>
               </Properties>
@@ -715,8 +716,10 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Save"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
-                    <BevelBorder/>
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder roundedCorners="true" thickness="4">
+                      <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
+                    </LineBorder>
                   </Border>
                 </Property>
                 <Property name="focusPainted" type="boolean" value="false"/>
@@ -776,6 +779,9 @@
                   <Dimension value="[250, 30]"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="salaryTxtKeyTyped"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabelPosition">
               <Properties>
@@ -856,8 +862,10 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Update"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
-                    <BevelBorder/>
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder roundedCorners="true" thickness="4">
+                      <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
+                    </LineBorder>
                   </Border>
                 </Property>
                 <Property name="focusPainted" type="boolean" value="false"/>
@@ -879,8 +887,10 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Delete"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
-                    <BevelBorder/>
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder roundedCorners="true" thickness="4">
+                      <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
+                    </LineBorder>
                   </Border>
                 </Property>
                 <Property name="focusPainted" type="boolean" value="false"/>
@@ -896,7 +906,7 @@
         <Container class="javax.swing.JPanel" name="generatepayroll">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="ff" type="rgb"/>
+              <Color blue="f2" green="f7" red="f9" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="66" red="ff" type="rgb"/>
@@ -920,26 +930,29 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="jLabelSelectDate" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="generatePayroll" min="-2" pref="129" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                                      <Component id="finalizePayroll" min="-2" pref="129" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="jLabelSelectDate" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelPayrollDetails" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabelGeneratePayroll" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="adDateChooser" alignment="0" min="-2" pref="137" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane5" alignment="1" min="-2" pref="604" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jScrollPane5" min="-2" pref="566" max="-2" attributes="0"/>
-                                  <Component id="jLabelPayrollDetails" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="adDateChooser" max="32767" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="generatePayroll" min="-2" pref="129" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="finalizePayroll" min="-2" pref="129" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="32" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -953,16 +966,16 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                               <Component id="jLabelGeneratePayroll" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jLabelSelectDate" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="adDateChooser" min="-2" pref="26" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="adDateChooser" min="-2" pref="39" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="generatePayroll" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
                                   <Component id="finalizePayroll" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jLabelPayrollDetails" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jScrollPane5" pref="0" max="32767" attributes="0"/>
@@ -977,12 +990,12 @@
             <Container class="javax.swing.JPanel" name="navPanelGP">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="cc" red="ff" type="rgb"/>
+                  <Color blue="21" green="2a" red="3c" type="rgb"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder roundedCorners="true" thickness="4">
-                      <Color PropertyName="color" blue="66" green="66" red="ff" type="rgb"/>
+                      <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                     </LineBorder>
                   </Border>
                 </Property>
@@ -1021,7 +1034,7 @@
                           <Component id="gpGeneratePayroll" min="-2" pref="49" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                           <Component id="adLogout1" min="-2" pref="27" max="-2" attributes="0"/>
-                          <EmptySpace pref="286" max="32767" attributes="0"/>
+                          <EmptySpace pref="287" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1042,7 +1055,7 @@
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder roundedCorners="true" thickness="4">
-                          <Color PropertyName="color" blue="66" green="66" red="ff" type="rgb"/>
+                          <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                         </LineBorder>
                       </Border>
                     </Property>
@@ -1066,7 +1079,7 @@
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder roundedCorners="true" thickness="4">
-                          <Color PropertyName="color" blue="66" green="66" red="ff" type="rgb"/>
+                          <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                         </LineBorder>
                       </Border>
                     </Property>
@@ -1090,7 +1103,7 @@
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder roundedCorners="true" thickness="4">
-                          <Color PropertyName="color" blue="66" green="66" red="ff" type="rgb"/>
+                          <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                         </LineBorder>
                       </Border>
                     </Property>
@@ -1214,7 +1227,7 @@
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="16" green="1e" red="2b" type="rgb"/>
+                  <Color blue="5b" green="7b" red="a6" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Payroll Details"/>
               </Properties>
@@ -1222,12 +1235,12 @@
             <Container class="javax.swing.JPanel" name="gpHeader">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="cc" red="ff" type="rgb"/>
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder roundedCorners="true" thickness="4">
-                      <Color PropertyName="color" blue="66" green="66" red="ff" type="rgb"/>
+                      <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                     </LineBorder>
                   </Border>
                 </Property>
@@ -1260,10 +1273,10 @@
                       <Color blue="ff" green="33" red="0" type="rgb"/>
                     </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="36" style="1"/>
+                      <Font name="Segoe UI" size="36" style="3"/>
                     </Property>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="66" green="66" red="ff" type="rgb"/>
+                      <Color blue="37" green="57" red="89" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="ADMIN DASHBOARD"/>
                   </Properties>
@@ -1285,7 +1298,7 @@
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder roundedCorners="true" thickness="4">
-                      <Color PropertyName="color" blue="66" green="66" red="ff" type="rgb"/>
+                      <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                     </LineBorder>
                   </Border>
                 </Property>
@@ -1311,7 +1324,7 @@
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="16" green="1e" red="2b" type="rgb"/>
+                  <Color blue="5b" green="7b" red="a6" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="GENERATE PAYROLL"/>
               </Properties>
@@ -1321,6 +1334,9 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="30" green="3f" red="59" type="rgb"/>
                 </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="12" style="3"/>
+                </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
@@ -1328,7 +1344,7 @@
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder roundedCorners="true" thickness="4">
-                      <Color PropertyName="color" blue="66" green="66" red="ff" type="rgb"/>
+                      <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                     </LineBorder>
                   </Border>
                 </Property>
@@ -1344,7 +1360,7 @@
         <Container class="javax.swing.JPanel" name="adminDashboard">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="ff" type="rgb"/>
+              <Color blue="f2" green="f7" red="f9" type="rgb"/>
             </Property>
           </Properties>
           <AuxValues>
@@ -1368,7 +1384,7 @@
                               <Component id="overviewLbl" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
-                          <Component id="jScrollPane3" pref="603" max="32767" attributes="0"/>
+                          <Component id="jScrollPane3" pref="606" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -1383,7 +1399,7 @@
                               <Component id="overviewLbl" min="-2" pref="31" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jScrollPane3" min="-2" pref="481" max="-2" attributes="0"/>
-                              <EmptySpace pref="80" max="32767" attributes="0"/>
+                              <EmptySpace pref="81" max="32767" attributes="0"/>
                           </Group>
                           <Component id="dhNavPanel" max="32767" attributes="0"/>
                       </Group>
@@ -1395,12 +1411,12 @@
             <Container class="javax.swing.JPanel" name="dhNavPanel">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="cc" red="ff" type="rgb"/>
+                  <Color blue="21" green="2a" red="3c" type="rgb"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder roundedCorners="true" thickness="4">
-                      <Color PropertyName="color" blue="66" green="66" red="ff" type="rgb"/>
+                      <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                     </LineBorder>
                   </Border>
                 </Property>
@@ -1463,7 +1479,7 @@
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder roundedCorners="true" thickness="4">
-                          <Color PropertyName="color" blue="66" green="66" red="ff" type="rgb"/>
+                          <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                         </LineBorder>
                       </Border>
                     </Property>
@@ -1487,7 +1503,7 @@
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder roundedCorners="true" thickness="4">
-                          <Color PropertyName="color" blue="66" green="66" red="ff" type="rgb"/>
+                          <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                         </LineBorder>
                       </Border>
                     </Property>
@@ -1511,7 +1527,7 @@
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder roundedCorners="true" thickness="4">
-                          <Color PropertyName="color" blue="66" green="66" red="ff" type="rgb"/>
+                          <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                         </LineBorder>
                       </Border>
                     </Property>
@@ -1529,7 +1545,7 @@
                       <Font name="Segoe UI" size="18" style="1"/>
                     </Property>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="66" green="66" red="ff" type="rgb"/>
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Navigation Panel"/>
                   </Properties>
@@ -1620,12 +1636,12 @@
             <Container class="javax.swing.JPanel" name="titlePanel">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="cc" red="ff" type="rgb"/>
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder roundedCorners="true" thickness="4">
-                      <Color PropertyName="color" blue="66" green="66" red="ff" type="rgb"/>
+                      <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                     </LineBorder>
                   </Border>
                 </Property>
@@ -1661,7 +1677,7 @@
                       <Font name="Segoe UI" size="36" style="1"/>
                     </Property>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="66" green="66" red="ff" type="rgb"/>
+                      <Color blue="37" green="57" red="89" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="ADMIN DASHBOARD"/>
                   </Properties>
@@ -1674,7 +1690,7 @@
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="66" red="ff" type="rgb"/>
+                  <Color blue="5b" green="7b" red="a6" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="DASHBOARD OVERVIEW"/>
               </Properties>
@@ -1716,15 +1732,12 @@
                   <Component id="titlePanel1" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Component id="mdNavPanel" min="-2" pref="240" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jScrollPane6" pref="572" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                               <Component id="jlabelMDOverview" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jScrollPane6" pref="572" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -1734,18 +1747,15 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="titlePanel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                               <Component id="jlabelMDOverview" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                               <Component id="jScrollPane6" min="-2" pref="478" max="-2" attributes="0"/>
-                              <EmptySpace pref="57" max="32767" attributes="0"/>
+                              <EmptySpace pref="70" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="mdNavPanel" pref="604" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="mdNavPanel" pref="605" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -1822,7 +1832,7 @@
                     <Property name="text" type="java.lang.String" value="Dashboard"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder roundedCorners="true" thickness="2">
+                        <LineBorder roundedCorners="true" thickness="4">
                           <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                         </LineBorder>
                       </Border>
@@ -1849,7 +1859,7 @@
                     <Property name="text" type="java.lang.String" value="Attendance Log"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder roundedCorners="true" thickness="2">
+                        <LineBorder roundedCorners="true" thickness="4">
                           <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                         </LineBorder>
                       </Border>
@@ -1876,7 +1886,7 @@
                     <Property name="text" type="java.lang.String" value="Overtime Request"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder roundedCorners="true" thickness="2">
+                        <LineBorder roundedCorners="true" thickness="4">
                           <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                         </LineBorder>
                       </Border>
@@ -2043,7 +2053,7 @@
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="16" green="1e" red="2b" type="rgb"/>
+                  <Color blue="5b" green="7b" red="a6" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="DASHBOARD OVERVIEW"/>
               </Properties>
@@ -2053,7 +2063,7 @@
         <Container class="javax.swing.JPanel" name="otrequest">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="ff" type="rgb"/>
+              <Color blue="f2" green="f7" red="f9" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="66" red="ff" type="rgb"/>
@@ -2073,24 +2083,28 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="gpHeader1" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="orNavPanel" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                              <Component id="jLabelGeneratePayroll1" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="331" max="-2" attributes="0"/>
+                              <Component id="orApproveBtn" min="-2" pref="119" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="orDeclineBtn" min="-2" pref="119" max="-2" attributes="0"/>
+                              <EmptySpace pref="23" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jScrollPane7" min="-2" pref="566" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="orApproveBtn" min="-2" pref="119" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="orDeclineBtn" min="-2" pref="119" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="jLabelGeneratePayroll1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Component id="jScrollPane7" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2100,20 +2114,21 @@
                       <Component id="gpHeader1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="orNavPanel" alignment="0" max="32767" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                               <Component id="jLabelGeneratePayroll1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jScrollPane7" min="-2" pref="276" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jScrollPane7" min="-2" pref="241" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="orApproveBtn" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
                                   <Component id="orDeclineBtn" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="222" max="32767" attributes="0"/>
                           </Group>
+                          <Component id="orNavPanel" alignment="0" max="32767" attributes="0"/>
                       </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2127,7 +2142,7 @@
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder roundedCorners="true" thickness="4">
-                      <Color PropertyName="color" blue="66" green="66" red="ff" type="rgb"/>
+                      <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                     </LineBorder>
                   </Border>
                 </Property>
@@ -2167,7 +2182,7 @@
                           <Component id="orAttendanceBtn" min="-2" pref="49" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="orOTRequestBtn" min="-2" pref="49" max="-2" attributes="0"/>
-                          <EmptySpace pref="278" max="32767" attributes="0"/>
+                          <EmptySpace pref="285" max="32767" attributes="0"/>
                           <Component id="adLogout4" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
                       </Group>
@@ -2190,7 +2205,7 @@
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder roundedCorners="true" thickness="4">
-                          <Color PropertyName="color" blue="66" green="66" red="ff" type="rgb"/>
+                          <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                         </LineBorder>
                       </Border>
                     </Property>
@@ -2214,7 +2229,7 @@
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder roundedCorners="true" thickness="4">
-                          <Color PropertyName="color" blue="66" green="66" red="ff" type="rgb"/>
+                          <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                         </LineBorder>
                       </Border>
                     </Property>
@@ -2238,7 +2253,7 @@
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder roundedCorners="true" thickness="4">
-                          <Color PropertyName="color" blue="66" green="66" red="ff" type="rgb"/>
+                          <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                         </LineBorder>
                       </Border>
                     </Property>
@@ -2256,7 +2271,7 @@
                       <Font name="Segoe UI" size="18" style="1"/>
                     </Property>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="66" green="66" red="ff" type="rgb"/>
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Navigation Panel"/>
                   </Properties>
@@ -2291,31 +2306,25 @@
                       <Color blue="e0" green="eb" red="f5" type="rgb"/>
                     </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="4" rowCount="0">
+                      <Table columnCount="3" rowCount="0">
                         <Column editable="false" title="Employee" type="java.lang.Object"/>
                         <Column editable="false" title="Date" type="java.lang.Object"/>
                         <Column editable="false" title="OT Hours" type="java.lang.Object"/>
-                        <Column editable="false" title="Actions" type="java.lang.Object"/>
                       </Table>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                       <TableColumnModel selectionModel="0">
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                           <Title/>
                           <Editor/>
                           <Renderer/>
                         </Column>
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                           <Title/>
                           <Editor/>
                           <Renderer/>
                         </Column>
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                          <Title/>
-                          <Editor/>
-                          <Renderer/>
-                        </Column>
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                           <Title/>
                           <Editor/>
                           <Renderer/>
@@ -2335,12 +2344,12 @@
             <Container class="javax.swing.JPanel" name="gpHeader1">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="cc" red="ff" type="rgb"/>
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder roundedCorners="true" thickness="4">
-                      <Color PropertyName="color" blue="66" green="66" red="ff" type="rgb"/>
+                      <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                     </LineBorder>
                   </Border>
                 </Property>
@@ -2361,7 +2370,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabelGPHeader1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="19" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="7" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -2373,10 +2382,10 @@
                       <Color blue="ff" green="33" red="0" type="rgb"/>
                     </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="36" style="1"/>
+                      <Font name="Segoe UI" size="36" style="3"/>
                     </Property>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="66" green="66" red="ff" type="rgb"/>
+                      <Color blue="37" green="57" red="89" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="MANAGER DASHBOARD"/>
                   </Properties>
@@ -2389,7 +2398,7 @@
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="66" red="ff" type="rgb"/>
+                  <Color blue="5b" green="7b" red="a6" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="OVERTIME APPROVAL"/>
               </Properties>
@@ -2409,11 +2418,14 @@
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder roundedCorners="true" thickness="4">
-                      <Color PropertyName="color" blue="66" green="66" red="ff" type="rgb"/>
+                      <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                     </LineBorder>
                   </Border>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="orApproveBtnActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="orDeclineBtn">
               <Properties>
@@ -2430,18 +2442,21 @@
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder roundedCorners="true" thickness="4">
-                      <Color PropertyName="color" blue="66" green="66" red="ff" type="rgb"/>
+                      <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                     </LineBorder>
                   </Border>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="orDeclineBtnActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="attendancelog">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="ff" type="rgb"/>
+              <Color blue="f2" green="f7" red="f9" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="66" red="ff" type="rgb"/>
@@ -2469,33 +2484,35 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabelEmployeesDirectory1" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabelManageEmployees1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jLabelPosition1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jlabelatName" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabelSalary1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabelStatus1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabelDateHired1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              </Group>
+                                          <Component id="jLabelPosition1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jlabelatName" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabelSalary1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabelStatus1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
                                               <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                  <Component id="otStatusCB" alignment="0" pref="231" max="32767" attributes="0"/>
                                                   <Component id="employeeCB" alignment="0" pref="231" max="32767" attributes="0"/>
-                                                  <Component id="timeINTxt" alignment="0" max="32767" attributes="0"/>
                                                   <Component id="timeOutTxt" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="workDateDC" max="32767" attributes="0"/>
+                                                  <Component id="timeINTxt" max="32767" attributes="0"/>
                                               </Group>
+                                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="workDateDC" min="-2" pref="231" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="atClrBtn" alignment="0" max="32767" attributes="0"/>
                                           <Component id="atSaveBtn" alignment="0" pref="118" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
+                                  <Component id="jLabelManageEmployees1" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
@@ -2505,64 +2522,52 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <Component id="msHeader1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="alNavPanel" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                              <Component id="jLabelManageEmployees1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jlabelatName" min="-2" max="-2" attributes="0"/>
+                                  <Component id="employeeCB" min="-2" pref="30" max="-2" attributes="0"/>
+                              </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                      <Component id="jLabelManageEmployees1" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jlabelatName" min="-2" max="-2" attributes="0"/>
-                                          <Component id="employeeCB" min="-2" pref="30" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="jLabelPosition1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="workDateDC" min="-2" pref="28" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                                              <Component id="jLabelSalary1" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Component id="timeINTxt" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                                              <Component id="jLabelStatus1" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="timeOutTxt" min="-2" pref="29" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
+                                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                      <Component id="jLabelPosition1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                                      <Component id="jLabelSalary1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="jLabelStatus1" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
-                                      <Component id="atSaveBtn" min="-2" pref="38" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="atClrBtn" min="-2" pref="38" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                                      <Component id="workDateDC" min="-2" pref="32" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="timeINTxt" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="timeOutTxt" min="-2" pref="29" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jLabelDateHired1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="otStatusCB" min="-2" pref="30" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jLabelEmployeesDirectory1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jScrollPane8" min="-2" pref="198" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
+                              <Component id="atSaveBtn" min="-2" pref="38" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="atClrBtn" min="-2" pref="38" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                      <Component id="jLabelEmployeesDirectory1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane8" min="-2" pref="277" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+                      <Component id="alNavPanel" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2576,7 +2581,7 @@
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder roundedCorners="true" thickness="4">
-                      <Color PropertyName="color" blue="66" green="66" red="ff" type="rgb"/>
+                      <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                     </LineBorder>
                   </Border>
                 </Property>
@@ -2616,7 +2621,7 @@
                           <Component id="atAttendanceBtn" min="-2" pref="49" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="atOTRequestBtn" min="-2" pref="49" max="-2" attributes="0"/>
-                          <EmptySpace pref="273" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Component id="adLogout5" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                       </Group>
@@ -2639,7 +2644,7 @@
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder roundedCorners="true" thickness="4">
-                          <Color PropertyName="color" blue="66" green="66" red="ff" type="rgb"/>
+                          <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                         </LineBorder>
                       </Border>
                     </Property>
@@ -2663,7 +2668,7 @@
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder roundedCorners="true" thickness="4">
-                          <Color PropertyName="color" blue="66" green="66" red="ff" type="rgb"/>
+                          <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                         </LineBorder>
                       </Border>
                     </Property>
@@ -2687,7 +2692,7 @@
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder roundedCorners="true" thickness="4">
-                          <Color PropertyName="color" blue="66" green="66" red="ff" type="rgb"/>
+                          <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                         </LineBorder>
                       </Border>
                     </Property>
@@ -2810,7 +2815,7 @@
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="66" red="ff" type="rgb"/>
+                  <Color blue="5b" green="7b" red="a6" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Employee Attendance Record"/>
               </Properties>
@@ -2818,12 +2823,12 @@
             <Container class="javax.swing.JPanel" name="msHeader1">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="cc" red="ff" type="rgb"/>
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder roundedCorners="true" thickness="4">
-                      <Color PropertyName="color" blue="66" green="66" red="ff" type="rgb"/>
+                      <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                     </LineBorder>
                   </Border>
                 </Property>
@@ -2842,8 +2847,8 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace pref="19" max="32767" attributes="0"/>
-                          <Component id="jLabelMSHeader1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jLabelMSHeader1" min="-2" pref="48" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -2856,10 +2861,10 @@
                       <Color blue="ff" green="33" red="0" type="rgb"/>
                     </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="36" style="1"/>
+                      <Font name="Segoe UI" size="36" style="3"/>
                     </Property>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="66" green="66" red="ff" type="rgb"/>
+                      <Color blue="37" green="57" red="89" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="MANAGER DASHBOARD"/>
                   </Properties>
@@ -2881,7 +2886,7 @@
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder roundedCorners="true" thickness="4">
-                      <Color PropertyName="color" blue="66" green="66" red="ff" type="rgb"/>
+                      <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                     </LineBorder>
                   </Border>
                 </Property>
@@ -2895,9 +2900,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="3"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="66" red="ff" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Employee"/>
               </Properties>
             </Component>
@@ -2907,7 +2909,7 @@
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="66" red="ff" type="rgb"/>
+                  <Color blue="5b" green="7b" red="a6" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Add/Update Daily Attendace "/>
               </Properties>
@@ -2927,7 +2929,7 @@
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder roundedCorners="true" thickness="4">
-                      <Color PropertyName="color" blue="66" green="66" red="ff" type="rgb"/>
+                      <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                     </LineBorder>
                   </Border>
                 </Property>
@@ -2936,29 +2938,8 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="atSaveBtnActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JComboBox" name="otStatusCB">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="cc" red="ff" type="rgb"/>
-                </Property>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="3">
-                    <StringItem index="0" value="Pending"/>
-                    <StringItem index="1" value="Approved"/>
-                    <StringItem index="2" value="Declined"/>
-                  </StringArray>
-                </Property>
-                <Property name="selectedIndex" type="int" value="-1"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
-            </Component>
             <Component class="javax.swing.JComboBox" name="employeeCB">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="cc" red="ff" type="rgb"/>
-                </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="0"/>
                 </Property>
@@ -2972,9 +2953,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="3"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="66" red="ff" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Work Date:"/>
               </Properties>
             </Component>
@@ -2982,9 +2960,6 @@
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="3"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="66" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Time In:"/>
               </Properties>
@@ -2994,21 +2969,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="3"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="66" red="ff" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Time Out:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabelDateHired1">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="3"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="66" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="OT Status:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="timeINTxt">
@@ -3076,7 +3037,7 @@
                               <Component id="overviewLbl2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jScrollPane9" min="-2" pref="495" max="-2" attributes="0"/>
-                              <EmptySpace pref="60" max="32767" attributes="0"/>
+                              <EmptySpace pref="67" max="32767" attributes="0"/>
                           </Group>
                           <Component id="dhNavPanel2" max="32767" attributes="0"/>
                       </Group>
@@ -3093,7 +3054,7 @@
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder roundedCorners="true" thickness="4">
-                      <Color PropertyName="color" blue="66" green="66" red="ff" type="rgb"/>
+                      <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                     </LineBorder>
                   </Border>
                 </Property>
@@ -3155,7 +3116,7 @@
                     <Property name="text" type="java.lang.String" value="View Payslip"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder roundedCorners="true" thickness="2">
+                        <LineBorder roundedCorners="true" thickness="4">
                           <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                         </LineBorder>
                       </Border>
@@ -3179,7 +3140,7 @@
                     <Property name="text" type="java.lang.String" value="Request Overtime"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder roundedCorners="true" thickness="2">
+                        <LineBorder roundedCorners="true" thickness="4">
                           <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                         </LineBorder>
                       </Border>
@@ -3334,7 +3295,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="titleLbl2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="13" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="7" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -3346,7 +3307,7 @@
                       <Color blue="ff" green="33" red="0" type="rgb"/>
                     </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="36" style="1"/>
+                      <Font name="Segoe UI" size="36" style="3"/>
                     </Property>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="37" green="57" red="89" type="rgb"/>
@@ -3362,7 +3323,7 @@
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="16" green="1e" red="2b" type="rgb"/>
+                  <Color blue="5b" green="7b" red="a6" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="PAYSLIP OVERVIEW"/>
               </Properties>
@@ -3372,7 +3333,7 @@
         <Container class="javax.swing.JPanel" name="requestOt">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="ff" type="rgb"/>
+              <Color blue="f2" green="f7" red="f9" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="66" red="ff" type="rgb"/>
@@ -3391,52 +3352,59 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="gpHeader2" max="32767" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Component id="navPanelGP2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabelGeneratePayroll2" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel1" alignment="0" min="-2" pref="70" max="-2" attributes="0"/>
-                                          <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="navPanelGP2" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jLabelGeneratePayroll2" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="otHrsSpinner" min="-2" pref="189" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="reqOTBtn" min="-2" pref="103" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="jLabel1" min="-2" pref="70" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jSpinner1" min="-2" pref="140" max="-2" attributes="0"/>
+                                      <Component id="reqOTDC" min="-2" pref="403" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="340" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <Component id="gpHeader2" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                               <Component id="jLabelGeneratePayroll2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="reqOTDC" min="-2" pref="219" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jSpinner1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="otHrsSpinner" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="reqOTBtn" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="navPanelGP2" max="32767" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="navPanelGP2" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -3452,7 +3420,7 @@
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder roundedCorners="true" thickness="4">
-                      <Color PropertyName="color" blue="66" green="66" red="ff" type="rgb"/>
+                      <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                     </LineBorder>
                   </Border>
                 </Property>
@@ -3491,7 +3459,7 @@
                           <Component id="roRequestOvertimeBtn" min="-2" pref="49" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                           <Component id="adLogout7" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="348" max="32767" attributes="0"/>
+                          <EmptySpace pref="356" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -3512,7 +3480,7 @@
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder roundedCorners="true" thickness="4">
-                          <Color PropertyName="color" blue="66" green="66" red="ff" type="rgb"/>
+                          <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                         </LineBorder>
                       </Border>
                     </Property>
@@ -3536,7 +3504,7 @@
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder roundedCorners="true" thickness="4">
-                          <Color PropertyName="color" blue="66" green="66" red="ff" type="rgb"/>
+                          <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                         </LineBorder>
                       </Border>
                     </Property>
@@ -3584,12 +3552,12 @@
             <Container class="javax.swing.JPanel" name="gpHeader2">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="cc" red="ff" type="rgb"/>
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder roundedCorners="true" thickness="4">
-                      <Color PropertyName="color" blue="66" green="66" red="ff" type="rgb"/>
+                      <Color PropertyName="color" blue="37" green="57" red="89" type="rgb"/>
                     </LineBorder>
                   </Border>
                 </Property>
@@ -3601,7 +3569,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="184" max="-2" attributes="0"/>
                           <Component id="jLabelGPHeader2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="212" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -3610,7 +3578,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabelGPHeader2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="13" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -3622,10 +3590,10 @@
                       <Color blue="ff" green="33" red="0" type="rgb"/>
                     </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="36" style="1"/>
+                      <Font name="Segoe UI" size="36" style="3"/>
                     </Property>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="66" green="66" red="ff" type="rgb"/>
+                      <Color blue="37" green="57" red="89" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="EMPLOYEE DASHBOARD"/>
                   </Properties>
@@ -3638,7 +3606,7 @@
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="66" red="ff" type="rgb"/>
+                  <Color blue="5b" green="7b" red="a6" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="REQUEST OVERTIME "/>
               </Properties>
@@ -3646,7 +3614,7 @@
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI Semibold" size="14" style="0"/>
+                  <Font name="Segoe UI" size="14" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Date:"/>
               </Properties>
@@ -3654,25 +3622,40 @@
             <Component class="javax.swing.JLabel" name="jLabel3">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI Semibold" size="14" style="0"/>
+                  <Font name="Segoe UI" size="14" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="OT Hours"/>
+                <Property name="text" type="java.lang.String" value="OT Hours:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JSpinner" name="jSpinner1">
+            <Component class="javax.swing.JSpinner" name="otHrsSpinner">
             </Component>
-            <Component class="javax.swing.JButton" name="jButton1">
+            <Component class="javax.swing.JButton" name="reqOTBtn">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="30" green="3f" red="59" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="1"/>
+                  <Font name="Segoe UI" size="12" style="3"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Request"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="reqOTBtnActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="com.toedter.calendar.JCalendar" name="reqOTDC">
+              <Properties>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder roundedCorners="true" thickness="0"/>
+                  </Border>
+                </Property>
+                <Property name="date" type="java.util.Date" editor="org.netbeans.beaninfo.editors.DateEditor">
+                  <SerializedValue value="-84,-19,0,5,115,114,0,14,106,97,118,97,46,117,116,105,108,46,68,97,116,101,104,106,-127,1,75,89,116,25,3,0,0,120,112,119,8,0,0,1,-99,-123,-49,97,-16,120"/>
+                </Property>
               </Properties>
             </Component>
           </SubComponents>
